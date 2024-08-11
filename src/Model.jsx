@@ -7,7 +7,7 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const scroll = useScroll()
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('./HOKA2.glb')
+  const { nodes, materials, animations } = useGLTF('./HOKA3.glb')
   const { actions, ref } = useAnimations(animations, group)
   const [anim3Playing, setAnim3Playing] = useState(false);
 
@@ -70,16 +70,6 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
           rotation={[1.344, 0, Math.PI / 2]}
           scale={0.01}
         />
-        <mesh
-          name="123"
-          castShadow
-          receiveShadow
-          geometry={nodes['123'].geometry}
-          material={nodes['123'].material}
-          position={[-8.461, -0.031, -0.696]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.01}
-        />
         <group
           name="Null"
           position={[1.631, 1.421, -0.4]}
@@ -93,30 +83,6 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
             material={materials['Material.012']}
             position={[-163.084, 39.962, 142.092]}
           />
-          <mesh
-            name="walls_outer_cirlce"
-            castShadow
-            receiveShadow
-            geometry={nodes.walls_outer_cirlce.geometry}
-            material={nodes.walls_outer_cirlce.material}
-            position={[-8.788, 15.587, -150.007]}
-          />
-          <mesh
-            name="white_lines"
-            castShadow
-            receiveShadow
-            geometry={nodes.white_lines.geometry}
-            material={nodes.white_lines.material}
-            position={[-298.067, 570.659, 145.199]}
-          />
-        </group>
-        <group
-          name="cam_null__Copy_"
-          position={[-8.909, 1.6, -0.099]}
-          rotation={[1.572, -0.058, 1.585]}
-          scale={0.01}
-        >
-          <PerspectiveCamera far={ 10000 } rotation={ [ Math.PI * -0.5, 0, 0 ] } fov={isMobile ? 85 : 40} makeDefault/>
         </group>
         <mesh
           name="floor"
@@ -124,16 +90,6 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
           receiveShadow
           geometry={nodes.floor.geometry}
           material={materials['Material.012']}
-          position={[0, 0.002, 0]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.01}
-        />
-        <mesh
-          name="floor_1"
-          castShadow
-          receiveShadow
-          geometry={nodes.floor_1.geometry}
-          material={materials.OctDiffuse2_0}
           position={[0, 0.002, 0]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.01}
@@ -259,9 +215,47 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.01}
         />
+        <group
+          name="cam"
+          position={[-8.909, 1.6, -0.099]}
+          rotation={[Math.PI / 2, 0, 1.585]}
+          scale={0.01}
+        >
+          <PerspectiveCamera far={ 10000 } rotation={ [ Math.PI * -0.5, 0, 0 ] } fov={isMobile ? 85 : 40} makeDefault/>
+        </group>
+        <mesh
+          name="walls_outer_cirlce"
+          castShadow
+          receiveShadow
+          geometry={nodes.walls_outer_cirlce.geometry}
+          material={materials.walls}
+          position={[1.543, 2.921, -0.244]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
+        <mesh
+          name="laufbahn"
+          castShadow
+          receiveShadow
+          geometry={nodes.laufbahn.geometry}
+          material={materials.OctDiffuse2_0}
+          position={[0, 0.002, 0]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
+        <mesh
+          name="stripes"
+          castShadow
+          receiveShadow
+          geometry={nodes.stripes.geometry}
+          material={nodes.stripes.material}
+          position={[0, 0.002, 0]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
       </group>
     </group>
   )
 }
 
-useGLTF.preload('./HOKA2.glb')
+useGLTF.preload('./HOKA3.glb')
