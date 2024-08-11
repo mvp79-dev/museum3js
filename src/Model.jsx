@@ -7,7 +7,7 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const scroll = useScroll()
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('./HOKA3.glb')
+  const { nodes, materials, animations } = useGLTF('./HOKA4.glb')
   const { actions, ref } = useAnimations(animations, group)
   const [anim3Playing, setAnim3Playing] = useState(false);
 
@@ -195,26 +195,6 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
             rotation={[-0.302, 0.968, 0.925]}
           />
         </group>
-        <mesh
-          name="walls_split1"
-          castShadow
-          receiveShadow
-          geometry={nodes.walls_split1.geometry}
-          material={materials['walls_1.001']}
-          position={[1.543, 2.921, -0.244]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.01}
-        />
-        <mesh
-          name="walls_split2"
-          castShadow
-          receiveShadow
-          geometry={nodes.walls_split2.geometry}
-          material={materials['walls_0.001']}
-          position={[1.543, 2.921, -0.244]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.01}
-        />
         <group
           name="cam"
           position={[-8.909, 1.6, -0.099]}
@@ -223,16 +203,6 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
         >
           <PerspectiveCamera far={ 10000 } rotation={ [ Math.PI * -0.5, 0, 0 ] } fov={isMobile ? 85 : 40} makeDefault/>
         </group>
-        <mesh
-          name="walls_outer_cirlce"
-          castShadow
-          receiveShadow
-          geometry={nodes.walls_outer_cirlce.geometry}
-          material={materials.walls}
-          position={[1.543, 2.921, -0.244]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.01}
-        />
         <mesh
           name="laufbahn"
           castShadow
@@ -253,9 +223,39 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.01}
         />
+        <mesh
+          name="walls_outer_cirlce"
+          castShadow
+          receiveShadow
+          geometry={nodes.walls_outer_cirlce.geometry}
+          material={materials.walls_1}
+          position={[1.543, 2.921, -0.244]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
+        <mesh
+          name="walls_split1_1"
+          castShadow
+          receiveShadow
+          geometry={nodes.walls_split1_1.geometry}
+          material={materials['walls.001']}
+          position={[1.543, 2.921, -0.244]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
+        <mesh
+          name="walls_split2_1"
+          castShadow
+          receiveShadow
+          geometry={nodes.walls_split2_1.geometry}
+          material={materials.walls_0}
+          position={[1.543, 2.921, -0.244]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
       </group>
     </group>
   )
 }
 
-useGLTF.preload('./HOKA3.glb')
+useGLTF.preload('./HOKA4.glb')
