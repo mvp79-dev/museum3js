@@ -1,0 +1,1500 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap');
+
+@font-face {
+  font-family: 'Avenir'; /* Name to reference this font */
+  src: url('/avenir.OTF') format('opentype'); /* Path to your OTF font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f1ed;
+  overscroll-behavior-y: none;
+  touch-action: manipulation;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: all;
+  background-color: transparent;
+}
+
+.experience {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 5; /* Keep this as it is */
+  pointer-events: all;
+}
+
+/* SOUND TOGGLE */
+
+.sound-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-left: 2%;
+  z-index: 15;
+  width: auto;
+  height: 65px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.kontakt-sound-container {
+  position: fixed;
+  bottom: 0;
+}
+
+.sound-container-image {
+  height: 25%;
+  position: relative;
+}
+
+.sound-text {
+  font-family: 'Avenir', sans-serif;
+  font-size: 0.75rem;
+  color: #f3f1ed;
+  font-weight: 100;
+  line-height: 1rem;
+}
+
+.sound-text-black {
+  font-family: 'Avenir', sans-serif;
+  font-size: 0.75rem;
+  color: black;
+  font-weight: 100;
+  line-height: 1rem;
+}
+
+.sound-line {
+  width: 20px;
+  height: 2px;
+  background-color: #f3f1ed;
+  transition: transform 0.2s ease; /* Smooth transition for transform property */
+}
+
+.sound-line-black {
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  transition: transform 0.2s ease; /* Smooth transition for transform property */
+}
+
+/* SCROLL OVERLAY */
+
+.scroll-overlay {
+  position: fixed; /* Use fixed for positioning relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 11;
+  background-color: rgba(0, 0, 0, 0.4); /* Example: semi-transparent white */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease, z-index 1s linear 0.5s;; /* Define opacity transition */
+}
+
+.scroll-overlay.hidden {
+  opacity: 0; /* When hidden, set opacity to 0 */
+  pointer-events: none; /* Disable pointer events when hidden */
+  z-index: -1;
+}
+
+.scroll-top, .scroll-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.scroll-bottom, .scroll-top {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+}
+
+.scroll-bottom.visible {
+  opacity: 1;
+}
+
+.scroll-element-image {
+  height: 75px;
+  width: auto;
+}
+
+.scroll-text {
+  font-family: 'Avenir', sans-serif;
+  font-size: 1rem;
+  color: #f3f1ed;
+  font-weight: 400;
+}
+
+.fa-solid, .fa-arrow-down-long {
+  font-size: 50px;
+}
+
+/* NAV OVERLAY */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 0.5%;
+  margin-right: 2.5%;
+  z-index: 10;
+  width: 325px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.overlay-navigation {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  gap: 100px;
+  margin-right: 0px;
+}
+
+.navigation-text {
+  background-color: transparent;
+  border: none;
+  font-family: 'Avenir', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #f3f1ed;
+  z-index: 20;
+  cursor: pointer;
+  margin-right: -5%;
+  background-color: transparent;
+}
+
+.navigation-text-experience {
+  background-color: transparent;
+  border: none;
+  font-family: 'Avenir', sans-serif;
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: #f3f1ed;
+  z-index: 20;
+  cursor: pointer;
+  margin-right: -5%;
+  background-color: transparent;
+}
+
+.nav-icon {
+  width: 75%;
+  align-self: flex-end;
+}
+
+.navigation-icon {
+  height: auto;
+  width: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-top {
+  width: 100%;
+  height: 2.5px;
+  background-color: #f3f1ed;
+  margin-bottom: 5%;
+}
+
+.icon-bottom {
+  width: 100%;
+  height: 2.5px;
+  background-color: #f3f1ed;
+  margin-top: 5%;
+}
+
+.black {
+  background-color: black;
+}
+
+.navigation-icon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #f3f1ed;
+  z-index: 21;
+  overflow: scroll;
+}
+
+.contact-spacing {
+  height: 20vh;
+  width: 100%;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navigation-icon-icon {
+  height: auto;
+  width: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  align-items: end;
+}
+
+.navigation-icon-overlay-content {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  margin-top: 2.25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-texts {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+}
+
+.overlay-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.overlay-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-description, .container-description-list  {
+  margin-top: 0;
+  font-family: 'Avenir', sans-serif;
+  font-size: 0.75rem;
+  color: black;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.container-description-list {
+}
+
+.list-list, .list-list-bottom {
+  margin-left: 10px;
+  margin-top: 0;
+  font-family: 'Avenir', sans-serif;
+  font-size: 0.75rem;
+  color: black;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+.list-list-bottom {
+  margin-bottom: 5px;
+}
+
+/* FULL OVERLAY */
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Additional styles for full-overlay content */
+
+.full-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f1ed;
+  z-index: 20;
+}
+
+.back-button {
+  font-size: 0.75rem;
+  padding: 8px 16px;
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.overlay-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.overlay-content.active {
+  opacity: 1;
+}
+
+.overlay-visible {
+  z-index: 10;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.overlay-navigation-visible {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  margin-right: 25px;
+  align-self: flex-end;
+}
+
+.navigation-text-back {
+  background-color: transparent;
+  border: none;
+  font-family: 'Avenir', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: black;
+  z-index: 20;
+  cursor: pointer;
+  margin-right: -5%;
+  background-color: transparent;
+}
+
+.lines-two {
+  font-size: 3rem;
+  color: black;
+}
+
+.containers {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space evenly between the two rows */
+  align-items: center;
+  overflow: scroll;
+  margin-top: 3%;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: left; /* Space evenly within each row */
+  margin-left: 10%;
+}
+
+.container {
+  width: 18%; /* Set the width of each container */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-right: 10%;
+}
+
+.container-one-image {
+  width: 100%;
+  position: relative;
+  background-color: transparent;
+}
+
+.container-one-image-img {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.container-heading {
+  margin-top: 1%;
+  margin-bottom: 0;
+  font-family: 'Avenir', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: black;
+}
+
+.container-small-heading {
+  margin-top: 1%;
+  margin-bottom: 0;
+  font-family: 'Avenir', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  margin-top: 0.75vh;
+  margin-bottom: 0.75vh;
+  font-weight: 500;
+  color: black;
+}
+
+.container-heading-2 {
+  margin-top: 1%;
+  margin-bottom: 0;
+  font-family: 'Avenir', sans-serif;
+  font-size: 1rem;
+  line-height: 0.5rem;
+  font-weight: 500;
+  color: black;
+}
+
+
+/* PROJECT OVERLAYS */
+
+.project-one-overlay, .project-two-overlay, .project-three-overlay, .project-four-overlay, .project-five-overlay {
+  position: absolute;
+  z-index: 95;
+  width: 100%;
+  height: 100vh;
+  background-color: #f3f1ed;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.projects-overlay-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: center;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+.project-left-overlay {
+  width: 45%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+  overflow: scroll;
+  position: relative;
+}
+
+.project-left-overlay::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+  display: flex;
+}
+
+.project-left-overlay::-webkit-scrollbar-track {
+  background-color: #f3f1ed; /* Set the color of the scrollbar track */
+}
+
+.project-left-overlay::-webkit-scrollbar-thumb {
+  background-color: #e0e0e0; /* Set the color of the scrollbar thumb */
+}
+
+.project-left-overlay::-webkit-scrollbar-thumb:hover {
+  background-color: #ccc; /* Change thumb color on hover */
+  opacity: 1;
+}
+
+
+.project-image {
+  width: 100%;
+}
+
+.project-left-overlay-button {
+  display: none;
+}
+
+.project-left-overlay-button-two {
+  display: none;
+}
+
+.project-right-overlay {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  margin-left: 10%;
+  margin-bottom: 2.5%;
+}
+
+.project-three-extra-content {
+  margin-left: 10%;
+  margin-bottom: 2.5%;
+  display: flex;
+  width: 90%;
+  height: auto;
+  flex-direction: row;
+  position: relative;
+}
+
+.project-three-extra-content-two {
+  margin-left: 0%;
+  margin-bottom: 2.5%;
+  display: flex;
+  width: 90%;
+  height: auto;
+  flex-direction: row;
+  position: relative;
+}
+
+.audio-controls {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  align-self: center;
+}
+
+.play-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+.fa-stop, .fa-play {
+  color: black;
+  font-size: 1vw;
+}
+
+.progress-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.progress-circle {
+  width: auto;
+  height: auto;
+}
+
+.progress-bar {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.3s;
+}
+
+.project-three-extra-content-column {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5%;
+}
+
+.project-description-audio {
+  font-family: 'Avenir', sans-serif;
+  font-size: 0.75rem;
+  line-height: 100%;
+  margin-bottom: 0%;
+  font-weight: 400;
+}
+
+.project-description-audio-small {
+  font-family: 'Avenir', sans-serif;
+  font-size: 0.65rem;
+  line-height: 100%;
+  text-align: justify;
+  font-weight: 400;
+}
+
+
+
+
+.project-top-text {
+  font-family: 'Avenir', sans-serif;
+  font-size: 1rem;
+  line-height: 0rem;
+  color: black;
+  font-weight: 500;
+}
+
+.project-description {
+  font-family: 'Avenir', sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: black;
+  margin-left: 10%;
+  text-align: justify;
+  margin-top: 0%;
+  margin-bottom: 2.5%;
+}
+
+.project-overlay-links {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  position: relative;
+  margin-left: 10%;
+  align-items: start;
+  height: 4vh;
+  gap: 1%;
+}
+
+.project-overlay-links-exp {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  position: relative;
+  align-items: start;
+  height: 4vh;
+  gap: 1%;
+}
+
+.project-overlay-links-text {
+  font-family: 'Avenir', sans-serif;
+  font-size: 0.9rem;
+  line-height: 100%;
+  color: black;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.project-overlay-links-image {
+  height: 40%;
+}
+
+.fa-solid, .fa-xmark {
+  font-size: 1rem;
+  cursor: pointer;
+  color: black;
+  background-color: transparent;
+}
+
+.close-button {
+  border: none;
+  background-color: transparent;
+}
+
+.white-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 2%;
+  margin-right: 2%;
+  border: none;
+  background-color: transparent;
+}
+
+/* 3D EXPERIENCE OVERLAYS */
+
+.white-button {
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.white-button-inside {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #f3f1ed;
+  pointer-events: all;
+  position: relative;
+  z-index: 1;
+  transition: width 0.15s ease-in-out, margin 0.15s ease-in-out; /* Add margin to transition */
+  cursor: pointer;
+}
+
+.white-button-inside:hover {
+  width: 100px; /* Double the width on hover */
+  margin-left: -0px; /* Adjust left margin to center the expansion */
+}
+
+.grey-button {
+  height: 200px;
+  width: 200px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.grey-button-inside {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #33333340;
+  pointer-events: all;
+  position: relative;
+  z-index: 1;
+  transition: width 0.15s ease-in-out, margin 0.15s ease-in-out; /* Add margin to transition */
+  cursor: pointer;
+}
+
+.grey-button-inside:hover {
+  width: 100px; /* Double the width on hover */
+  margin-left: -25px; /* Adjust left margin to center the expansion */
+}
+
+.white-button-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 95;
+  width: 40%;
+  height: 100vh;
+  background-color: #f3f1ed;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.white-button-navigation {
+  position: relative;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  align-items: start;
+}
+
+.white-button-content {
+  position: relative;
+  width: 90%;
+  margin-left: 5%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+
+.white-button-left {
+  width: 47.5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+  overflow: scroll;
+}
+
+.white-button-left::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+  display: flex;
+
+}
+
+.white-button-left::-webkit-scrollbar-track {
+  background-color: #f3f1ed; /* Set the color of the scrollbar track */
+}
+
+.white-button-left::-webkit-scrollbar-thumb {
+  background-color: #e0e0e0; /* Set the color of the scrollbar thumb */
+}
+
+.white-button-left::-webkit-scrollbar-thumb:hover {
+  background-color: #ccc; /* Change thumb color on hover */
+}
+
+.white-button-image {
+  width: 100%;
+}
+
+.white-button-right {
+  width: 47.5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-right: 0%;
+  padding-right: 5%;
+  overflow: scroll;
+}
+
+
+
+
+
+/* LOADING SCREEN */
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 4rem;
+  width: 100vw;
+  height: 100vh;
+  z-index: 12;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background-color: #f3f1ed;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.loading-screen--hidden {
+  animation: fade-out 0.5s ease-in-out forwards 1s;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loading-screen__title {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: lowercase;
+  color: black;
+  margin: 0;
+  overflow: hidden; /* Hide overflowing text */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+@keyframes fillText {
+  from {
+    width: 0; /* Start with zero width */
+  }
+  to {
+    width: 100%; /* End with full width */
+  }
+}
+
+.loading-screen__title {
+  animation: fillText 1.5s linear forwards; /* Animation lasts 2 seconds */
+}
+
+.progress__container {
+  width: 100%;
+  height: 2.5px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-top: 5%;
+}
+
+.progress__bar {
+  width: 0;
+  height: 100%;
+  background-color: black;
+  transition: width 0.5s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 1.2%;
+    z-index: 10;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-right: 5%;
+  }
+  
+  .overlay-navigation {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    gap: 50px;
+    margin-right: 0px;
+  }
+
+  .navigation-icon {
+    height: auto;
+    width: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+
+  /* SOUND CONTAINER MOBILE */
+
+  .kontakt-sound-container {
+    position: fixed;
+    margin-top: -3%;
+    margin-left: 2.5%;
+    z-index: 15;
+    width: 300px;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .navigation-text-back {
+    background-color: transparent;
+    border: none;
+    font-family: 'Avenir', sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: black;
+    z-index: 20;
+    background-color: transparent;
+  }
+
+  .scroll-top, .scroll-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  /* .scroll-top {
+    margin-top: -15%;
+  } */
+
+  
+  .scroll-element-image {
+    height: 50px;
+    width: auto;
+  }
+  
+
+  .scroll-text {
+    font-family: 'Avenir', sans-serif;
+    font-size: 0.75rem;
+    color: #f3f1ed;
+    font-weight: 400;
+  }
+
+
+  /* OVERLAY CONTENT */
+
+
+  .containers {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 8.5vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space evenly between the two rows */
+    align-items: center;
+    overflow: scroll;
+    gap: 25px;
+  }
+  
+  .row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /* Space evenly within each row */
+    margin-left: 0%;
+    gap: 25px;
+  }
+  
+  .container {
+    width: 100%; /* Set the width of each container */
+    margin: 0; /* Add margin around each container */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  
+  .container-one-image {
+    width: 100%;
+    position: relative;
+  }
+  
+  .container-heading {
+    margin-top: 1%;
+    margin-bottom: 0;
+    font-family: 'Avenir', sans-serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: black;
+  }
+
+  .container-heading-2 {
+    margin-top: 1%;
+    margin-bottom: 0;
+    font-family: 'Avenir', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    color: black;
+  }
+
+  .container-heading-brand {
+    margin-top: 4%;
+    margin-bottom: 3%;
+    font-family: 'Avenir', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    color: black;
+  }
+  
+  .container-description {
+    margin-top: 0;
+    font-family: 'Avenir', sans-serif;
+    font-size: 0.75rem;
+    color: black;
+  }
+
+  .navigation-icon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #f3f1ed;
+    z-index: 21;
+  }
+  .navigation-icon-overlay-content {
+    width: 80%;
+    margin-left: 10%;
+    height: 100vh;
+    margin-top: 8.5vh;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .overlay-texts {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0%;
+  }
+
+  /* LOADING MOBILE */
+
+  .loading-screen__title {
+    font-family: 'Avenir', sans-serif;
+    font-weight: 400;
+    font-size: 0.5rem;
+    text-transform: lowercase;
+    color: black;
+    margin: 0;
+    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap; /* Prevent wrapping */
+  }
+
+  /* PROJECT OVERLAYS MOBILE */
+
+  .project-one-overlay, .project-two-overlay, .project-three-overlay, .project-four-overlay, .project-five-overlay, .project-six-overlay, .project-seven-overlay, .project-eight-overlay, .project-nine-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 95;
+    width: 100%;
+    height: auto;
+    background-color: #f3f1ed;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .projects-overlay-content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    margin-top: 10vh;
+  }
+  
+  .project-left-overlay {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 0%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    overflow: hidden;
+  }
+  
+  
+  .project-image {
+    width: 100%;
+  }
+
+  .project-left-overlay-button {
+    position: absolute;
+    top: 50%; /* Adjust these values based on your layout */
+    transform: translateY(-50%);
+    right: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    display: block;
+  }
+  
+  .project-left-overlay-button-two {
+    position: absolute;
+    top: 50%; /* Adjust these values based on your layout */
+    transform: translateY(-50%);
+    left: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    display: block;
+  }
+
+  .fa-chevron-right, .fa-chevron-left {
+    color: white;
+  }
+
+  .project-left-overlay::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .project-right-overlay {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+  
+  .project-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    margin-left: 0%;
+    margin-bottom: 5%;
+  }
+
+  .project-three-extra-content {
+    margin-left: 0%;
+    margin-bottom: 5%;
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    position: relative;
+  }
+  
+  .audio-controls {
+    position: relative;
+    width: 10vw;
+    height: 10vw;
+    align-self: center;
+  }
+  
+  .play-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10vw;
+    height: 10vw;
+  }
+  
+  .fa-stop, .fa-play {
+    color: black;
+    font-size: 1vw;
+  }
+  
+  .progress-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10vw;
+    height: 10vw;
+  }
+  
+  .progress-circle {
+    width: auto;
+    height: auto;
+  }
+  
+  .progress-bar {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.3s;
+  }
+  
+  .project-three-extra-content-column {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5%;
+  }
+  
+  .project-description-audio {
+    font-family: 'Avenir', sans-serif;
+    font-size: 0.75rem;
+    line-height: 100%;
+    color: black;
+    margin-bottom: 0%;
+  }
+  
+  .project-description-audio-small {
+    font-family: 'Avenir', sans-serif;
+    font-size: 0.75rem;
+    line-height: 100%;
+    color: black;
+    text-align: justify;
+  }
+  
+  .project-top-text {
+    font-family: 'Avenir', sans-serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: black;
+    font-weight: 500;
+    margin-top: 3%;
+  }
+  
+  .project-description {
+    font-family: 'Avenir', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: black;
+    margin-left: 0%;
+    margin-top: 0%;
+    margin-bottom: 5%;
+  }
+  
+  .fa-solid, .fa-xmark {
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  
+  .close-button {
+    border: none;
+    background-color: transparent;
+  }
+
+  .project-overlay-links {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    position: relative;
+    margin-left: 0%;
+    align-items: start;
+    height: 4vh;
+    gap: 1%;
+    margin-bottom: 20vh;
+  }
+
+  .project-overlay-links-exp {
+    margin-bottom: 20vh;
+  }
+
+/* 3D EXPERIENCE OVERLAYS MOBILE */
+
+.white-button-inside {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #f3f1ed;
+  pointer-events: all;
+  position: relative;
+  z-index: 1;
+  transition: width 0.15s ease-in-out, margin 0.15s ease-in-out; /* Add margin to transition */
+  cursor: pointer;
+}
+
+.white-button {
+  height: 175px;
+  width: 175px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.white-button-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 95;
+  width: 100%;
+  height: auto;
+  background-color: #f3f1ed;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.white-button-navigation {
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 0%;
+  margin-right: 0%;
+  padding-left: 10%;
+  margin-top: 0%;
+  margin-bottom: 5%;
+  align-items: center;
+  background-color: #f3f1ed;
+  z-index: 20;
+}
+
+.white-close-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 2%;
+  margin-right: 2%;
+  border: none;
+  background-color: transparent;
+  z-index: 30;
+}
+
+.white-button-content {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  margin-top: 10vh;
+}
+
+.white-button-left {
+  width: 80%;
+  margin-left: 5%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+  position: relative;
+  overflow: hidden;
+}
+
+.white-button-image {
+  width: 100%;
+}
+
+.white-button-right {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+  
+
+}
+
+.white {
+  color: #f3f1ed;
+}
+
+
+
+
