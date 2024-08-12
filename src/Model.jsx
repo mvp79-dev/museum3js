@@ -7,7 +7,7 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const scroll = useScroll()
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('./HOKA5.glb')
+  const { nodes, materials, animations } = useGLTF('./HOKA6.glb')
   const { actions, ref } = useAnimations(animations, group)
   const [anim3Playing, setAnim3Playing] = useState(false);
 
@@ -175,14 +175,6 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
             rotation={[-0.302, 0.968, 0.925]}
           />
         </group>
-        <group
-          name="cam"
-          position={[-8.909, 1.6, -0.099]}
-          rotation={[Math.PI / 2, 0, 1.585]}
-          scale={0.01}
-        >
-          <PerspectiveCamera far={ 10000 } rotation={ [ Math.PI * -0.5, 0, 0 ] } fov={isMobile ? 85 : 40} makeDefault/>
-        </group>
         <mesh
           name="Cylinder_1"
           castShadow
@@ -250,9 +242,17 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.01}
         />
+        <group
+          name="cam"
+          position={[-8.855, 1.6, -0.102]}
+          rotation={[1.572, -0.058, 1.585]}
+          scale={0.01}
+        >
+          <PerspectiveCamera far={ 10000 } rotation={ [ Math.PI * -0.5, 0, 0 ] } fov={isMobile ? 85 : 40} makeDefault/>
+        </group>
       </group>
     </group>
   )
 }
 
-useGLTF.preload('./HOKA5.glb')
+useGLTF.preload('./HOKA6.glb')
