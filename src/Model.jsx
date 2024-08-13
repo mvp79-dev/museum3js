@@ -7,7 +7,7 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const scroll = useScroll()
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('./HOKA6.glb')
+  const { nodes, materials, animations } = useGLTF('./HOKA7.glb')
   const { actions, ref } = useAnimations(animations, group)
   const [anim3Playing, setAnim3Playing] = useState(false);
 
@@ -186,16 +186,6 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
           scale={0.01}
         />
         <mesh
-          name="circles_2"
-          castShadow
-          receiveShadow
-          geometry={nodes.circles_2.geometry}
-          material={materials.Material}
-          position={[1.543, 2.921, -0.244]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.01}
-        />
-        <mesh
           name="circles_1"
           castShadow
           receiveShadow
@@ -250,9 +240,29 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
         >
           <PerspectiveCamera far={ 10000 } rotation={ [ Math.PI * -0.5, 0, 0 ] } fov={isMobile ? 85 : 40} makeDefault/>
         </group>
+        <mesh
+          name="Cloner"
+          castShadow
+          receiveShadow
+          geometry={nodes.Cloner.geometry}
+          material={nodes.Cloner.material}
+          position={[0, 0.493, 0]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
+        <mesh
+          name="circles_2"
+          castShadow
+          receiveShadow
+          geometry={nodes.circles_2.geometry}
+          material={materials.Material}
+          position={[1.543, 2.921, -0.244]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
       </group>
     </group>
   )
 }
 
-useGLTF.preload('./HOKA6.glb')
+useGLTF.preload('./HOKA7.glb')

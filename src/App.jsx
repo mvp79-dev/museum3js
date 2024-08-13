@@ -277,6 +277,7 @@ function App() {
   const [showOverlayThree, setShowOverlayThree] = useState(false);
   const [showOverlayFour, setShowOverlayFour] = useState(false);
   const [showOverlayFive, setShowOverlayFive] = useState(false);
+  const [showOverlaySix, setShowOverlaySix] = useState(false);
 
   const toggleOverlayOne = () => {
     setShowOverlayOne(prevState => !prevState);
@@ -285,6 +286,7 @@ function App() {
     setShowOverlayThree(false);
     setShowOverlayFour(false);
     setShowOverlayFive(false);
+    setShowOverlaySix(false);
 
     playSoundEffect();
   };
@@ -296,6 +298,7 @@ function App() {
     setShowOverlayThree(false);
     setShowOverlayFour(false);
     setShowOverlayFive(false);
+    setShowOverlaySix(false);
 
     playSoundEffect();
   };
@@ -307,6 +310,7 @@ function App() {
     setShowOverlayTwo(false);
     setShowOverlayFour(false);
     setShowOverlayFive(false);
+    setShowOverlaySix(false);
 
     playSoundEffect();
   };
@@ -318,12 +322,25 @@ function App() {
     setShowOverlayTwo(false);
     setShowOverlayThree(false);
     setShowOverlayFive(false);
+    setShowOverlaySix(false);
 
     playSoundEffect();
   };
 
   const toggleOverlayFive = () => {
     setShowOverlayFive(prevState => !prevState);
+
+    setShowOverlayOne(false);
+    setShowOverlayTwo(false);
+    setShowOverlayThree(false);
+    setShowOverlayFour(false);
+    setShowOverlaySix(false);
+
+    playSoundEffect();
+  };
+
+  const toggleOverlaySix = () => {
+    setShowOverlaySix(prevState => !prevState);
 
     setShowOverlayOne(false);
     setShowOverlayTwo(false);
@@ -550,7 +567,7 @@ function App() {
 
       {/* Main experience container */}
       <div className="experience">
-        <CanvasContainer handleNavigationClick={ handleNavigationClick } toggleOverlayOne={toggleOverlayOne} toggleOverlayTwo={toggleOverlayTwo} toggleOverlayThree={toggleOverlayThree} toggleOverlayFour={toggleOverlayFour} toggleOverlayFive={toggleOverlayFive} />
+        <CanvasContainer handleNavigationClick={ handleNavigationClick } toggleOverlayOne={toggleOverlayOne} toggleOverlayTwo={toggleOverlayTwo} toggleOverlayThree={toggleOverlayThree} toggleOverlayFour={toggleOverlayFour} toggleOverlayFive={toggleOverlayFive} toggleOverlaySix={toggleOverlaySix} />
       </div>
 
       {/* 3D experince overlays */}
@@ -567,37 +584,11 @@ function App() {
           </button>
           <div className="white-button-navigation" >
             <div className="white-button-navigation-texts" >
-              <h1 className="container-heading" >S30 SIDEBOARD</h1>
-              <h1 className="container-description" >in process</h1>
+              <h1 className="container-heading" >BONDI</h1>
             </div>
           </div>
           <div className="white-button-content" >
-            {isMobile ? (
-              <div className="white-button-left">
-                <ImageGallery showNav={ true } showThumbnails={ false } showFullscreenButton={ false } showPlayButton={ false } items={images1} disableSwipe={ true } />
-              </div>
-              ) : (
-                <div className="white-button-left" >
-                <img className="white-button-image" src="/s1.jpg" />
-                <img className="white-button-image" src="/s2.jpg" />
-                <img className="white-button-image" src="/s3.jpg" />
-                <img className="white-button-image" src="/s4.jpg" />
-                </div>
-            )}
-            <div className="white-button-right" >
-              {/* <h1 className="container-heading-2" >BRAND CONCEPT</h1> */}
-              <h1 className="container-description" >The s30 sideboard is the first part of our object series and represents our agency as a standalone product. We are developing the sideboard in a holistic manner, covering the design and technical development as well as the production and the brand positioning.</h1>
-              <h1 className="container-description" >The task is to represent the ideas and personality of the agency in a single product. Therefore the object had to recreate a shape that is working also as a sculpture by implying a certain feeling towards the object.</h1>
-              <h1 className="container-description" >Defining the feeling of the agency for us meant to work with clear edges, simplistic and yet thoughtful and new. We came to the conclusion to combine natural stone and metal which are two of our defined brand materials. Ideally we will work with pumice since it also reflects our  brand colors.</h1>
-              <h1 className="container-description" >The sideboard features two separate heights of drawers, that are held by a rail that is cut into the stone sides. The lower drawers can easily be moved up and down to achieve different looks and moods when using the sideboard. Each drawer opens individually at any position.</h1>
-              <h1 className="container-description" >In the current process we are facing challenges in terms of production and technical realization which will be handled by our production manager in collaboration with local artisans and experts in stone and metal production. For us it is important to be as close to the production as possible to realize the project in the highest possible quality in terms of design and execution.</h1>
-              <a href="mailto:inquiries@siemensstr30.de?subject=Inquiry%20s30%20sideboard" target="_blank" rel="noopener noreferrer">
-                <div className="project-overlay-links-exp">
-                  <img className="project-overlay-links-image" src="/s30.png" />
-                  <h1 className="project-overlay-links-text">Price on request</h1>
-                </div>
-              </a>
-            </div>
+            <img src="p2.png" alt="" />
           </div>
         </div>
       </CSSTransition>
@@ -614,61 +605,11 @@ function App() {
           </button>
           <div className="white-button-navigation" >
             <div className="white-button-navigation-texts" >
-              <h1 className="container-heading" >EMEKA OKEREKE ART EXHIBITION</h1>
-              <h1 className="container-description" >on-going partnership</h1>
+              <h1 className="container-heading" >STINSON</h1>
             </div>
           </div>
           <div className="white-button-content" >
-          {isMobile ? (
-              <div className="white-button-left">
-              <ImageGallery showNav={ true } showThumbnails={ false } showFullscreenButton={ false } showPlayButton={ false } items={images2} disableSwipe={ true } />
-            </div>
-              ) : (
-                <div className="white-button-left" >
-                <img className="white-button-image" src="/emeka1.jpg" />
-                <img className="white-button-image" src="/emeka2.jpg" />
-                <img className="white-button-image" src="/emeka3.jpg" />
-                <img className="white-button-image" src="/emeka4.jpg" />
-                <img className="white-button-image" src="/emeka5.jpg" />
-                </div>
-            )}
-            <div className="white-button-right" >
-              {/* <h1 className="container-heading-2" >BRAND CONCEPT</h1> */}
-              <div className="project-three-extra-content-two">
-                        <div className="audio-controls">
-                          <button className="play-button" onClick={handleTogglePlay}>
-                            {isPlaying ? <i className="fa-solid fa-stop" style={{ fontSize: '15px' }}></i> : <i className="fa-solid fa-play" style={{ fontSize: '15px' }}></i>}
-                          </button>
-                          <div className="progress-container">
-                            <svg className="progress-circle" viewBox="0 0 40 40">
-                              <circle cx="20" cy="20" r="15" fill="none" strokeWidth="1" stroke="#ccc"></circle>
-                              <circle className="progress-bar" cx="20" cy="20" r="15" fill="none" strokeWidth="3" stroke="black" strokeDasharray="94" strokeDashoffset={94 - (currentTime / duration) * 94}></circle>
-                            </svg>
-                          </div>
-                        </div>
-                        <audio
-                          ref={audioRef}
-                          src="/podcast.wav" // Path to your audio file in the public folder
-                          onTimeUpdate={handleTimeUpdate}
-                          onEnded={() => setIsPlaying(false)}
-                        ></audio>
-                        <div className="project-three-extra-content-column" >
-                          <h1 className="project-description-audio" >NKAKA: Art and Processes</h1>
-                          <h1 className="project-description-audio-small" >EP09: “Water will always find its crack”. Nkata with Ahmet Öğüt</h1>
-                        </div>
-              </div>
-              <h1 className="container-description" >After being introduced to the project by Emeka Okereke, our task was to develop a thoughtful communication for the artists artwork with the title “Art & Processes”. The artwork is part of the group exhibition “A Home for Something Unknown” at the Neuer Berliner Kunstverein.</h1>
-              <h1 className="container-description" >Following the theme of dialogue and interdisciplinary design practices, which is discussed in the artwork we went ahead with a direct and collaborative approach. Speaking to Emeka revealed the objectives that lead us through the rest of the project. These being the idea of an interactive Artwork, symbolizing and encouraging communication and the themes of african artists as well as very personal memories of the artist himself and his childhood associations with Africa.</h1>
-              <h1 className="container-description" >Continuing the collaboration we gathered ideas of how the central structure should look that was meant to hold the headphones and to indicate the heart of the artwork, being the five podcast episodes the artist dedicated to different black mentors. We wanted to draw references to a campfire which Emeka remembered to be a place in their backyard in Nigeria where the family would gather to tell stories under the moonlight. We came to the conclusion that we should build a structure resembling that campfire with the right height for the visitors to see each others face when sitting around it. The large black wall is meant to set the atmosphere and to lead focus onto the installation that has a circular light shining from above. Simplistic stools balance out the overall look and the information about the podcast is displayed further back on the walls. The large arrangement of the different aspects are meant to let the visitor explore the artwork slowly and in a more structured way, while leaving space for the interaction in the center of the scene. The dotted lines show the complex intertwinement and connections of African art around the world that the artist refers to as “Trans-Africanism” in his work. </h1>
-              <h1 className="container-description" >The challenges of this project were to create a very clear language that leads to a real human interaction guided by the artwork. Understanding the ideas beyond what is said in the podcast and experiencing the nonverbal conversation that the artwork allows was not an easy task. The authenticity of the final result also comes from the direct dialogue we had with the artist and the personality that we were able to let the visitors take part in.</h1>
-              <h1 className="container-description" >Finally the project resulted in an artwork that goes beyond the podcast itself and has touched people by enabling real conversations and interaction during the time of the exhibition in March and April 2024. As interdisciplinary artists we are happy to be part of the project and to support Emeka Okereke for future exhibitions.</h1>
-              <a href="https://nkatapodcast.com/" target="_blank" rel="noopener noreferrer">
-                <div className="project-overlay-links-exp">
-                  <img className="project-overlay-links-image" src="/nkata.png" />
-                  <h1 className="project-overlay-links-text">Nkata Podcast</h1>
-                </div>
-              </a>
-            </div>
+            <img src="p1.png" alt="" />
           </div>
         </div>
       </CSSTransition>
@@ -685,36 +626,11 @@ function App() {
           </button>
           <div className="white-button-navigation" >
             <div className="white-button-navigation-texts" >
-              <h1 className="container-heading" >SUSU ACCRA BRAND STRATEGY</h1>
-              <h1 className="container-description" >on-going partnership</h1>
+              <h1 className="container-heading" >CLIFTON</h1>
             </div>
           </div>
           <div className="white-button-content" >
-          {isMobile ? (
-              <div className="white-button-left">
-              <ImageGallery showNav={ true } showThumbnails={ false } showFullscreenButton={ false } showPlayButton={ false } items={images3} disableSwipe={ true } />
-            </div>
-              ) : (
-                <div className="white-button-left" >
-                <img className="white-button-image" src="/susu6.jpg" />
-                <img className="white-button-image" src="/susu5.jpg" />
-                <img className="white-button-image" src="/susu4.jpg" />
-                </div>
-            )}
-            <div className="white-button-right" >
-              {/* <h1 className="container-heading-2" >BRAND CONCEPT</h1> */}
-              <h1 className="container-description" >The long term partnership with Susu Accra is a very exciting opportunity for us. The set goal of the brand is to establish African luxury in the European market. Combining luxurious and yet modern design with contemporary marketing and presentation, this is a project that fits perfectly into our key strengths. Our task is to assist the brand strategically and to take on the creative direction of the brand going forward.</h1>
-              <h1 className="container-description" >For the displayed project our task was to convey the idea of African luxury in a social media post and to reach a younger audience with a rather low expense. </h1>
-              <h1 className="container-description" >To realize the project we have built a CGI environment that represents the freedom and lightness of the brand while also showing the artistic approach to the design. The falling fabric shows the individual inlays inspired by typical African prints that come with the bag. The video highlights the placement inside of Andreas Murkudis Berlin.</h1>
-              <h1 className="container-description" >Creating a highly realistic texture for the bag was a challenge we mastered in this project, that will help the overall realism of future advertisements for the brand.</h1>
-              <h1 className="container-description" >Currently we are able to extend our creative freedom in the project and plan on building a new product range that will let us reach our desired customer.</h1>
-              <a href="https://susuaccra.com/" target="_blank" rel="noopener noreferrer">
-                <div className="project-overlay-links-exp">
-                  <img className="project-overlay-links-image" src="/susu.png" />
-                  <h1 className="project-overlay-links-text">Susu Accra</h1>
-                </div>
-              </a>
-            </div>
+            <img src="p6.png" alt="" />
           </div>
         </div>
       </CSSTransition>
@@ -731,36 +647,11 @@ function App() {
             </button>
           <div className="white-button-navigation" >
             <div className="white-button-navigation-texts" >
-              <h1 className="container-heading" >NEUENDORF HOUSE BRAND BUILDING</h1>
-              <h1 className="container-description" >on-going partnership</h1>
+              <h1 className="container-heading" >CHALLENGER</h1>
             </div>
           </div>
           <div className="white-button-content" >
-          {isMobile ? (
-              <div className="white-button-left">
-              <ImageGallery showNav={ true } showThumbnails={ false } showFullscreenButton={ false } showPlayButton={ false } items={images4} disableSwipe={ true } />
-            </div>
-              ) : (
-                <div className="white-button-left" >
-                <img className="white-button-image" src="/neue1.jpg" />
-                <img className="white-button-image" src="/neue2.jpg" />
-                <img className="white-button-image" src="/neue3.jpg" />
-                </div>
-            )}
-            <div className="white-button-right" >
-              {/* <h1 className="container-heading-2" >BRAND CONCEPT</h1> */}
-              <h1 className="container-description" >Our ongoing Partnership with the Neuendorf House is a project that honors us deeply, while also challenging us to do justice to the artistic masterpiece of Claudio Silverstrin and John Pawson. The House was finished in 1989 and is one of the most important architectural buildings in the world. The task is to establish the house as a brand and to expand the recognition of the house from architecture students and experts towards a global audience. </h1>
-              <h1 className="container-description" >This includes the building of a social media strategy as well as content production, collaboration management with clothing and lifestyle brands that carry the same minimalistic and luxurious approach and the development of a brand strategy.</h1>
-              <h1 className="container-description" >Our first steps were to renew the Instagram account by removing old content and starting a new regular post strategy with content made by renowned photographers that had visited the house before. To express our gratitude for an article by the Openhouse Magazine we created a dedicated post showing the magazine in a CGI rebuild of the house. </h1>
-              <h1 className="container-description" >The reel includes an exact representation of the house that we built in 3D, to further work with the house in the digital world. Bringing the house into the digital world is part of our strategy to expand the house as a brand into different artistic worlds. The connection between the Neuendorf House and the Art world is already made not only by the impact of the architecture but also by the families online art platform Artnet. </h1>
-              <h1 className="container-description" >In the ongoing partnership it will be our challenge to establish the Neuendorf House also in the new generations while maintaining the class and artistic approach of the cultural inheritance.</h1>
-              <a href="https://neuendorfhouse.com/" target="_blank" rel="noopener noreferrer">
-                <div className="project-overlay-links-exp">
-                  <img className="project-overlay-links-image" src="/neue.png" />
-                  <h1 className="project-overlay-links-text">Neuendorf House</h1>
-                </div>
-              </a>
-            </div>
+            <img src="p5.png" alt="" />
           </div>
         </div>
       </CSSTransition>
@@ -777,29 +668,32 @@ function App() {
           </button>
           <div className="white-button-navigation" >
             <div className="white-button-navigation-texts" >
-              <h1 className="container-heading" >BOOT DESIGN</h1>
-              <h1 className="container-description" >in process</h1>
+              <h1 className="container-heading" >MAFATE</h1>
             </div>
           </div>
           <div className="white-button-content" >
-          {isMobile ? (
-              <div className="white-button-left">
-                <ImageGallery showNav={ true } showThumbnails={ false } showFullscreenButton={ false } showPlayButton={ false } items={images5} disableSwipe={ true } />
-              </div>
-              ) : (
-                <div className="white-button-left" >
-                <img className="white-button-image" src="/b1.jpg" />
-                <img className="white-button-image" src="/b2.jpg" />
-                <img className="white-button-image" src="/b3.jpg" />
-                </div>
-            )}
-            <div className="white-button-right" >
-              {/* <h1 className="container-heading-2" >BRAND CONCEPT</h1> */}
-              <h1 className="container-description" >With this boot we are currently designing for a german streetwear brand, our task was to expand the existing product line and to introduce a new category to the brand.</h1>
-              <h1 className="container-description" >To approach this, we took inspiration from workwear and safety boots as well as human anatomy to create a combination of organic and geometric shapes. The upper part is made out of suede mixed with nylon for the tongue and an extra layer that secures the laces. To compliment the overall volume, the inside of the shoe is made of a padded fabric. The black and grey look of the boot together with the metal details refer back to the brands DNA.</h1>
-              <h1 className="container-description" >While creating the boot we are acting as the production manager and therefore lead the conversations and negotiations about the product. Representing a streetwear brand that wants to produce low quantities this has been a challenge for us, in which we learned how handle a rather weak negotiation position while maintaining as much control over the design and also making good economic sense.</h1>
-              <h1 className="container-description" >The project is currently in process and will be completed this year. It is our own take on the evolution of german streetwear brands and is meant to function as an image enhancer for the brand. It also expands our know how in both streetwear design and production.</h1>
+            <img src="p3.png" alt="" />
+          </div>
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={showOverlaySix}
+        timeout={1000} // Adjust timeout to match your CSS transition duration
+        classNames="fade"
+        unmountOnExit
+      >
+        <div className={`white-button-overlay ${showOverlaySix ? "active" : ""}`}>
+          <button className="white-close-button" onClick={toggleOverlaySix}>
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+          <div className="white-button-navigation" >
+            <div className="white-button-navigation-texts" >
+              <h1 className="container-heading" >SPEED EVO</h1>
             </div>
+          </div>
+          <div className="white-button-content" >
+            <img src="p4.png" alt="" />
           </div>
         </div>
       </CSSTransition>

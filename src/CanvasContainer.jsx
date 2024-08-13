@@ -19,7 +19,7 @@ function ToneMapping() {
     return <></>;
   }
 
-export default function CanvasContainer({ toggleOverlayOne, toggleOverlayTwo, toggleOverlayThree, toggleOverlayFour, toggleOverlayFive, handleNavigationClick }) {
+export default function CanvasContainer({ toggleOverlayOne, toggleOverlayTwo, toggleOverlayThree, toggleOverlayFour, toggleOverlayFive, toggleOverlaySix, handleNavigationClick }) {
 
   const [hovered, setHovered] = useState(false);
 
@@ -55,6 +55,10 @@ export default function CanvasContainer({ toggleOverlayOne, toggleOverlayTwo, to
     toggleOverlayFive(); 
   };
 
+  const handleWhiteButtonSix = () => {
+    toggleOverlaySix(); 
+  };
+
   const [hidden, set] = useState()
 
 
@@ -83,7 +87,7 @@ export default function CanvasContainer({ toggleOverlayOne, toggleOverlayTwo, to
           </div>
         </Html>
         <Html occlude distanceFactor={1} portal={{ current: gl.domElement.parentNode }} position={[-4.3, -0.55, 2.52]} >
-          <div className="white-button" onClick={handleWhiteButtonFive} >
+          <div className="white-button" onClick={handleWhiteButtonSix} >
             <div className="white-button-inside" />
           </div>
         </Html>
