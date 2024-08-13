@@ -986,6 +986,23 @@ a {
 
 @media (max-width: 768px) {
 
+  .grey-button {
+    height: 200px;
+    width: 800px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .grey-button-text {
+    font-family: "Inter", sans-serif;
+    font-size: 25vw;
+    font-weight: 300;
+  }
+
 
   .overlay {
     position: fixed;
