@@ -61,6 +61,8 @@ export default function CanvasContainer({ toggleOverlayOne, toggleOverlayTwo, to
 
   const [hidden, set] = useState()
 
+  const isMobile = window.innerWidth <= 768;
+
 
   const HtmlContent = () => {
     const { gl } = useThree();
@@ -96,7 +98,7 @@ export default function CanvasContainer({ toggleOverlayOne, toggleOverlayTwo, to
             <div className="white-button-inside" />
           </div>
         </Html>
-        <Html occlude distanceFactor={1} portal={{ current: gl.domElement.parentNode }} position={[14, 0, -0.25]} >
+        <Html occlude distanceFactor={1} portal={{ current: gl.domElement.parentNode }} position={[14, -0.5, isMobile ? -0.45 : -0.25]} >
           <div className="grey-button" onClick={handleWhiteButtonText} >
             <h1 className="grey-button-text" >PLAY GAME</h1>
           </div>
