@@ -13,7 +13,7 @@ const LoadingScreen = () => {
   return (
     <div className={`loading-screen ${active ? "" : "loading-screen--hidden"}`}>
       <div className="loading-screen__container">
-        <h1 className="loading-screen__title">siemensstr.30 is a creative agency with a focus on gen-z design</h1>
+        <h1 className="loading-screen__title">fly human fly</h1>
         <div className="progress__container">
           <div className="progress__bar" style={{ width: `${progress}%` }}></div>
         </div>
@@ -708,7 +708,6 @@ function App() {
           {isFullNavigationVisible && (
             <>
               <button className="navigation-text" onClick={handleNavigationClick} >ARCHIVE</button>
-              <button className="navigation-text" onClick={handleNavigationIconClick} >IMPRESSUM</button>
             </>
           )}
         </div>
@@ -1163,7 +1162,6 @@ function App() {
                 {isFullNavigationVisible && (
                   <>
                     <button className="navigation-text-back" onClick={handleCloseOverlay} >SHOWROOM</button>
-                    <button className="navigation-text-back" onClick={handleNavigationIconClick2} >IMPRESSUM</button>
                   </>
                 )}
               </div>
@@ -1179,60 +1177,7 @@ function App() {
                 <h1 className="sound-text"></h1>
               )}
             </div>
-            <div className="containers">
-              {/* Render top projects */}
-              <div className="row">
-                {topProjects.map((projectName) => (
-                  <div
-                    key={projectName}
-                    className={`container ${projectName}`}
-                    onClick={() => handleProjectClick(projectName)}
-                  >
-                    <div className="container-one-image">
-                      <img className="container-one-image-img" src={projectDetails[projectName].mainImage} />
-                    </div>
-                    <h1 className="container-heading">{projectDetails[projectName].title}</h1>
-                    <p className="container-description">{projectDetails[projectName].description}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Render center projects */}
-              <div className="row">
-                {centerProjects.map((projectName) => (
-                  <div
-                    key={projectName}
-                    className={`container ${projectName}`}
-                    onClick={() => handleProjectClick(projectName)}
-                  >
-                    <div className="container-one-image">
-                      <img className="container-one-image-img" src={projectDetails[projectName].mainImage} />
-                    </div>
-                    <h1 className="container-heading">{projectDetails[projectName].title}</h1>
-                    <p className="container-description">{projectDetails[projectName].description}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Render bottom projects */}
-              <div className="row">
-                {bottomProjects.map((projectName) => (
-                  <div
-                    key={projectName}
-                    className={`container ${projectName}`}
-                    onClick={() => handleProjectClick(projectName)}
-                  >
-                    <div className="container-one-image" />
-                    <h1 className="container-heading">{projectDetails[projectName].title}</h1>
-                    <p className="container-description">{projectDetails[projectName].description}</p>
-                  </div>
-                ))}
-              </div>
-
-            {/* Render selected project overlay if a project is clicked */}
-
-
-            </div>
+            <h1 className="overlay-big-text" >GAME</h1>
           </div>
         </div>
       </CSSTransition>
