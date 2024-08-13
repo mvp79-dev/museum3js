@@ -89,8 +89,8 @@ function App() {
     setIsFullNavigationVisible(!isFullNavigationVisible); // Toggle visibility
   };
 
-  const iconSrc = isFullNavigationVisible ? '/logowhite.png' : '/logowhite2.png';
-  const iconSrc2 = isFullNavigationVisible ? '/logoblack.png' : '/logoblack2.png';
+  const iconSrc = isFullNavigationVisible ? '/hokalogo.png' : '/hokalogo.png';
+  const iconSrc2 = isFullNavigationVisible ? '/hokalogoblack.png' : '/hokalogoblack.png';
 
   const handleNavigationIconClick = () => {
     setShowNavigationIconOverlay(true); // Show the navigation icon overlay
@@ -701,15 +701,9 @@ function App() {
       {/* Overlay button to trigger full overlay */}
       <div className="overlay">
         <div className="overlay-navigation">
-          <div className="navigation-icon" onClick={handleFullNavigationIconClick}>
+          <div className="navigation-icon" onClick={handleNavigationClick}>
             <img className="nav-icon" src={iconSrc} />
           </div>
-          {/* Conditional rendering based on visibility state */}
-          {isFullNavigationVisible && (
-            <>
-              <button className="navigation-text" onClick={handleNavigationClick} >ARCHIVE</button>
-            </>
-          )}
         </div>
       </div>
 
@@ -1155,15 +1149,9 @@ function App() {
             <div className="overlay">
             {isFullNavigationMenu && (
               <div className="overlay-navigation">
-                <div className="navigation-icon" onClick={handleFullNavigationIconClick}>
+                <div className="navigation-icon" onClick={handleCloseOverlay}>
                   <img className="nav-icon" src={iconSrc2} />
                 </div>
-                {/* Conditional rendering based on visibility state */}
-                {isFullNavigationVisible && (
-                  <>
-                    <button className="navigation-text-back" onClick={handleCloseOverlay} >SHOWROOM</button>
-                  </>
-                )}
               </div>
               )}
             </div>
