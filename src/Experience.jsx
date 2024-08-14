@@ -36,7 +36,7 @@ export default function Experience() {
           color={"black"}
         />
       </EffectComposer>
-      <Environment files="./env.hdr" background environmentIntensity={0.6} backgroundRotation={[Math.PI * -0.05, Math.PI * -1.475, 0]} />
+      <Environment files="./env.hdr" background environmentIntensity={0.8} backgroundRotation={[Math.PI * -0.05, Math.PI * -1.475, 0]} />
 
       </>
   )
