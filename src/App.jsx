@@ -89,7 +89,7 @@ function App() {
     setIsFullNavigationVisible(!isFullNavigationVisible); // Toggle visibility
   };
 
-  const iconSrc = isFullNavigationVisible ? '/hokalogo.png' : '/hokalogo.png';
+  const iconSrc = isFullNavigationVisible ? '/hokalogoblack.svg' : '/hokalogoblack.svg';
   const iconSrc2 = isFullNavigationVisible ? '/hokalogoblack.png' : '/hokalogoblack.png';
 
   const handleNavigationIconClick = () => {
