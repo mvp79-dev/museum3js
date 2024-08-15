@@ -15,7 +15,7 @@ export default function Experience() {
         </ScrollControls>
       </Suspense>
       <directionalLight 
-        color={ "#f2eee6" } shadow-bias={-0.001} castShadow position={[10, 35, -25]} 
+        color={ "#f2eee6" } shadow-bias={-0.001} castShadow position={[5, 35, -20]} 
         intensity={2.5} shadow-mapSize-width={4096} shadow-mapSize-height={4096} 
       >
         <orthographicCamera attach="shadow-camera" args={[-25, 25, -25, 25, 0.1, 100]} />
@@ -36,7 +36,7 @@ export default function Experience() {
           color={"black"}
         />
       </EffectComposer>
-      <Environment files="./env.hdr" background environmentIntensity={0.8} backgroundRotation={[Math.PI * -0.05, Math.PI * -1.475, 0]} />
+      <Environment files="./env.hdr" background environmentIntensity={0.9} backgroundRotation={[Math.PI * -0.05, Math.PI * -1.475, 0]} />
 
       </>
   )
