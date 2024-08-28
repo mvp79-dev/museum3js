@@ -7,7 +7,7 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const scroll = useScroll()
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('./HOKA7.glb')
+  const { nodes, materials, animations } = useGLTF('./HOKA9.glb')
   const { actions, ref } = useAnimations(animations, group)
   const [anim3Playing, setAnim3Playing] = useState(false);
 
@@ -50,16 +50,6 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
             rotation={[0.367, -0.039, -1.163]}
           />
         </group>
-        <mesh
-          name="Fill"
-          castShadow
-          receiveShadow
-          geometry={nodes.Fill.geometry}
-          material={materials.OctDiffuse2_0}
-          position={[13.669, 1.587, 0.003]}
-          rotation={[1.344, 0, Math.PI / 2]}
-          scale={0.01}
-        />
         <group
           name="Null"
           position={[1.631, 1.421, -0.4]}
@@ -176,16 +166,6 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
           />
         </group>
         <mesh
-          name="Cylinder_1"
-          castShadow
-          receiveShadow
-          geometry={nodes.Cylinder_1.geometry}
-          material={nodes.Cylinder_1.material}
-          position={[13.662, 0.493, 0]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.01}
-        />
-        <mesh
           name="circles_1"
           castShadow
           receiveShadow
@@ -250,19 +230,240 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.01}
         />
+        <group
+          name="Symmetry_1"
+          position={[325.147, 539.605, 624.581]}
+          rotation={[-Math.PI, 0.68, -Math.PI]}
+          scale={0.417}>
+          <group name="Null_1" rotation={[0.502, 0, 0]}>
+            <mesh
+              name="Null_1Cube_3"
+              castShadow
+              receiveShadow
+              geometry={nodes.Null_1Cube_3.geometry}
+              material={nodes.Null_1Cube_3.material}>
+              <mesh
+                name="Null_1Cube_3Cube_4"
+                castShadow
+                receiveShadow
+                geometry={nodes.Null_1Cube_3Cube_4.geometry}
+                material={nodes.Null_1Cube_3Cube_4.material}
+                position={[2.24, 2.935, 15.793]}
+                rotation={[0.213, 0, 0]}>
+                <mesh
+                  name="Null_1Cube_3Cube_4Cube_5"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Null_1Cube_3Cube_4Cube_5.geometry}
+                  material={nodes.Null_1Cube_3Cube_4Cube_5.material}
+                  position={[-0.037, 0.716, 16.885]}
+                  rotation={[0.338, 0, 0]}
+                />
+              </mesh>
+            </mesh>
+          </group>
+          <group name="Null_1_1" rotation={[-0.502, 0, Math.PI]} scale={-1}>
+            <mesh
+              name="Null_1_1Cube_3_1"
+              castShadow
+              receiveShadow
+              geometry={nodes.Null_1_1Cube_3_1.geometry}
+              material={nodes.Null_1_1Cube_3_1.material}
+              rotation={[-1.005, 0, Math.PI]}
+              scale={-1}>
+              <mesh
+                name="Null_1_1Cube_3_1Cube_4_1"
+                castShadow
+                receiveShadow
+                geometry={nodes.Null_1_1Cube_3_1Cube_4_1.geometry}
+                material={nodes.Null_1_1Cube_3_1Cube_4_1.material}
+                position={[2.24, -11.754, -10.949]}
+                rotation={[0.213, 0, 0]}>
+                <mesh
+                  name="Null_1_1Cube_3_1Cube_4_1Cube_5_1"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Null_1_1Cube_3_1Cube_4_1Cube_5_1.geometry}
+                  material={nodes.Null_1_1Cube_3_1Cube_4_1Cube_5_1.material}
+                  position={[-0.037, -16.621, -3.061]}
+                  rotation={[0.338, 0, 0]}
+                />
+              </mesh>
+            </mesh>
+          </group>
+        </group>
+        <group
+          name="Symmetry"
+          position={[546.311, 533.3, -817.968]}
+          rotation={[Math.PI, -0.746, Math.PI]}
+          scale={0.417}>
+          <group name="Null_1_1" rotation={[-0.502, 0, Math.PI]} scale={-1}>
+            <mesh
+              name="Null_1Cube_1"
+              castShadow
+              receiveShadow
+              geometry={nodes.Null_1Cube_1.geometry}
+              material={nodes.Null_1Cube_1.material}
+              rotation={[-1.005, 0, Math.PI]}
+              scale={-1}>
+              <mesh
+                name="Null_1Cube_1Cube_1_1"
+                castShadow
+                receiveShadow
+                geometry={nodes.Null_1Cube_1Cube_1_1.geometry}
+                material={nodes.Null_1Cube_1Cube_1_1.material}
+                position={[2.24, -11.754, -10.949]}
+                rotation={[0.213, 0, 0]}>
+                <mesh
+                  name="Null_1Cube_1Cube_1_1Cube_2_1"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Null_1Cube_1Cube_1_1Cube_2_1.geometry}
+                  material={nodes.Null_1Cube_1Cube_1_1Cube_2_1.material}
+                  position={[-0.037, -16.621, -3.061]}
+                  rotation={[0.338, 0, 0]}
+                />
+              </mesh>
+            </mesh>
+          </group>
+          <group name="Null001" rotation={[0.502, 0, 0]}>
+            <mesh
+              name="NullCube"
+              castShadow
+              receiveShadow
+              geometry={nodes.NullCube.geometry}
+              material={nodes.NullCube.material}>
+              <mesh
+                name="NullCubeCube_1"
+                castShadow
+                receiveShadow
+                geometry={nodes.NullCubeCube_1.geometry}
+                material={nodes.NullCubeCube_1.material}
+                position={[2.24, 2.935, 15.793]}
+                rotation={[0.213, 0, 0]}>
+                <mesh
+                  name="NullCubeCube_1Cube_2"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.NullCubeCube_1Cube_2.geometry}
+                  material={nodes.NullCubeCube_1Cube_2.material}
+                  position={[-0.037, 0.716, 16.885]}
+                  rotation={[0.338, 0, 0]}
+                />
+              </mesh>
+            </mesh>
+          </group>
+        </group>
+        <group
+          name="Null002"
+          position={[-1026.066, 2009.072, -1541.12]}
+          rotation={[-0.502, 0, -Math.PI]}>
+          <mesh
+            name="Cube_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube_1.geometry}
+            material={nodes.Cube_1.material}
+            position={[-482.193, 2041.45, 1244.01]}
+            rotation={[0.502, 0, 0]}>
+            <mesh
+              name="Cube_1_2"
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube_1_2.geometry}
+              material={nodes.Cube_1_2.material}
+              position={[2.24, 15.793, -2.935]}
+              rotation={[0.213, 0, 0]}>
+              <mesh
+                name="Cube_2"
+                castShadow
+                receiveShadow
+                geometry={nodes.Cube_2.geometry}
+                material={nodes.Cube_2.material}
+                position={[-0.037, 16.885, -0.716]}
+                rotation={[0.338, 0, 0]}
+              />
+            </mesh>
+          </mesh>
+        </group>
+        <group
+          name="Null_2"
+          position={[-915.08, -2497.739, 268.203]}
+          rotation={[-0.479, 0, Math.PI]}
+        />
         <mesh
           name="circles_2"
           castShadow
           receiveShadow
           geometry={nodes.circles_2.geometry}
-          material={materials.Material}
+          material={materials.walls}
           position={[1.543, 2.921, -0.244]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.01}
         />
+        <group
+          name="Null003"
+          position={[-1026.066, 1541.12, 2009.072]}
+          rotation={[2.639, 0, Math.PI]}
+        />
+        <group
+          name="bird2"
+          position={[0, 933.3, -817.968]}
+          rotation={[Math.PI, -0.746, Math.PI]}
+          scale={0.417}
+        />
+        <mesh
+          name="Cylinder_1"
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder_1.geometry}
+          material={nodes.Cylinder_1.material}
+          position={[12.862, 0.493, 0]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
+        <mesh
+          name="Fill"
+          castShadow
+          receiveShadow
+          geometry={nodes.Fill.geometry}
+          material={materials.OctDiffuse2_0}
+          position={[12.864, 1.587, 0.003]}
+          rotation={[1.344, 0, Math.PI / 2]}
+          scale={0.01}
+        />
+        <group
+          name="bird"
+          position={[12.188, 4.476, 0]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}>
+          <mesh
+            name="body"
+            castShadow
+            receiveShadow
+            geometry={nodes.body.geometry}
+            material={nodes.body.material}
+          />
+          <mesh
+            name="wing1"
+            castShadow
+            receiveShadow
+            geometry={nodes.wing1.geometry}
+            material={nodes.wing1.material}
+            rotation={[-Math.PI / 6, 0, 0]}
+          />
+          <mesh
+            name="wing2"
+            castShadow
+            receiveShadow
+            geometry={nodes.wing2.geometry}
+            material={nodes.wing2.material}
+            rotation={[Math.PI / 6, 0, 0]}
+          />
+        </group>
       </group>
     </group>
   )
 }
 
-useGLTF.preload('./HOKA7.glb')
+useGLTF.preload('./HOKA9.glb')
