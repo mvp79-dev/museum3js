@@ -7,7 +7,7 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const scroll = useScroll()
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('./hoka12.glb')
+  const { nodes, materials, animations } = useGLTF('./hoka14.glb')
   const { actions, ref } = useAnimations(animations, group)
   const [anim3Playing, setAnim3Playing] = useState(false);
 
@@ -429,33 +429,8 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
           name="bbird"
           position={[-14.135, 10.348, 0.974]}
           rotation={[Math.PI / 2, 0, -0.128]}
-          scale={0.01}>
-          <group name="newbird" position={[2752.933, -180.091, 0]} rotation={[0, 0, -0.001]}>
-            <mesh
-              name="body"
-              castShadow
-              receiveShadow
-              geometry={nodes.body.geometry}
-              material={nodes.body.material}
-            />
-            <mesh
-              name="wing1"
-              castShadow
-              receiveShadow
-              geometry={nodes.wing1.geometry}
-              material={nodes.wing1.material}
-              rotation={[0.087, 0, 0]}
-            />
-            <mesh
-              name="wing2"
-              castShadow
-              receiveShadow
-              geometry={nodes.wing2.geometry}
-              material={nodes.wing2.material}
-              rotation={[-0.087, 0, 0]}
-            />
-          </group>
-        </group>
+          scale={0.01}
+        />
         <mesh
           name="circles_2"
           castShadow
@@ -471,4 +446,4 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
   )
 }
 
-useGLTF.preload('./hoka12.glb')
+useGLTF.preload('./hoka14.glb')
