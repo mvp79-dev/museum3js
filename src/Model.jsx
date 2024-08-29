@@ -7,7 +7,7 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const scroll = useScroll()
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('./HOKA9.glb')
+  const { nodes, materials, animations } = useGLTF('./hoka11.glb')
   const { actions, ref } = useAnimations(animations, group)
   const [anim3Playing, setAnim3Playing] = useState(false);
 
@@ -165,35 +165,6 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
             rotation={[-0.302, 0.968, 0.925]}
           />
         </group>
-        <mesh
-          name="circles_1"
-          castShadow
-          receiveShadow
-          geometry={nodes.circles_1.geometry}
-          material={materials['walls.001']}
-          position={[1.543, 2.921, -0.244]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.01}
-        />
-        <mesh
-          name="circles"
-          castShadow
-          receiveShadow
-          geometry={nodes.circles.geometry}
-          material={materials['walls_0.001']}
-          position={[1.543, 2.921, -0.244]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.01}
-        />
-        <mesh
-          name="track_floor"
-          castShadow
-          receiveShadow
-          geometry={nodes.track_floor.geometry}
-          material={materials.OctDiffuse2_0}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.01}
-        />
         <mesh
           name="inside_floor"
           castShadow
@@ -391,26 +362,10 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
           position={[-915.08, -2497.739, 268.203]}
           rotation={[-0.479, 0, Math.PI]}
         />
-        <mesh
-          name="circles_2"
-          castShadow
-          receiveShadow
-          geometry={nodes.circles_2.geometry}
-          material={materials.walls}
-          position={[1.543, 2.921, -0.244]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.01}
-        />
         <group
           name="Null003"
           position={[-1026.066, 1541.12, 2009.072]}
           rotation={[2.639, 0, Math.PI]}
-        />
-        <group
-          name="bird2"
-          position={[0, 933.3, -817.968]}
-          rotation={[Math.PI, -0.746, Math.PI]}
-          scale={0.417}
         />
         <mesh
           name="Cylinder_1"
@@ -427,15 +382,15 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
           castShadow
           receiveShadow
           geometry={nodes.Fill.geometry}
-          material={materials.OctDiffuse2_0}
+          material={materials.walls}
           position={[12.864, 1.587, 0.003]}
           rotation={[1.344, 0, Math.PI / 2]}
           scale={0.01}
         />
         <group
           name="bird"
-          position={[12.188, 4.476, 0]}
-          rotation={[Math.PI / 2, 0, 0]}
+          position={[10.3, 4.476, -3.785]}
+          rotation={[Math.PI / 2, 0, -0.296]}
           scale={0.01}>
           <mesh
             name="body"
@@ -450,7 +405,7 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
             receiveShadow
             geometry={nodes.wing1.geometry}
             material={nodes.wing1.material}
-            rotation={[-Math.PI / 6, 0, 0]}
+            rotation={[0.087, 0, 0]}
           />
           <mesh
             name="wing2"
@@ -458,12 +413,60 @@ export default function Model(props, { handleWhiteButtonOneClick }) {
             receiveShadow
             geometry={nodes.wing2.geometry}
             material={nodes.wing2.material}
-            rotation={[Math.PI / 6, 0, 0]}
+            rotation={[-0.087, 0, 0]}
           />
         </group>
+        <mesh
+          name="circles_2"
+          castShadow
+          receiveShadow
+          geometry={nodes.circles_2.geometry}
+          material={materials.walls}
+          position={[1.543, 2.921, -0.244]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
+        <mesh
+          name="circles_1"
+          castShadow
+          receiveShadow
+          geometry={nodes.circles_1.geometry}
+          material={materials['walls.001']}
+          position={[1.543, 2.921, -0.244]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
+        <mesh
+          name="circles"
+          castShadow
+          receiveShadow
+          geometry={nodes.circles.geometry}
+          material={materials['walls_0.001']}
+          position={[1.543, 2.921, -0.244]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
+        <mesh
+          name="track_floor"
+          castShadow
+          receiveShadow
+          geometry={nodes.track_floor.geometry}
+          material={materials.OctDiffuse2_0}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
+        <mesh
+          name="track_floor_1"
+          castShadow
+          receiveShadow
+          geometry={nodes.track_floor_1.geometry}
+          material={materials.walls}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.01}
+        />
       </group>
     </group>
   )
 }
 
-useGLTF.preload('./HOKA9.glb')
+useGLTF.preload('./hoka11.glb')
