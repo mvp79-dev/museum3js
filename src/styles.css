@@ -779,6 +779,7 @@ a {
   z-index: 1;
   transition: width 0.15s ease-in-out, margin 0.15s ease-in-out; /* Add margin to transition */
   cursor: pointer;
+  border: 2px solid #ccc;
 }
 
 .white-button-inside:hover {
@@ -801,6 +802,7 @@ a {
   font-family: "Inter", sans-serif;
   font-size: 80px;
   font-weight: 300;
+  color: #fefeff;
 }
 
 .grey-button-inside {
